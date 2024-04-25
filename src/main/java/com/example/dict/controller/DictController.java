@@ -19,7 +19,7 @@ import static org.springframework.http.HttpStatus.CREATED;
 public class DictController {
     private final DictService dictService;
 
-    // Получение всех слов
+    // Получение слов с помощью пагинации
     @GetMapping
     @Cacheable(cacheNames = "getWords")
     public List<WordDtoRs> getWords(@RequestParam Integer startWord,
