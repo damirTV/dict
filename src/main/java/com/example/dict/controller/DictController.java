@@ -21,7 +21,7 @@ public class DictController {
 
     // Получение всех слов
     @GetMapping
-    @Cacheable
+    @Cacheable(cacheNames = "getWords")
     public List<WordDtoRs> getWords(@RequestParam Integer startWord,
                                        @RequestParam Integer qtyWords) {
         return dictService.getWords(startWord, qtyWords);
